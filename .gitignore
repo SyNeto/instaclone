@@ -1,0 +1,4 @@
+mongodata/*
+!mongodata/.gitkeep
+
+node_modules/

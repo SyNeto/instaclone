@@ -1,0 +1,19 @@
+{
+  "name": "instaclone",
+  "version": "0.0.0",
+  "description": "Instaclone",
+  "main": "index.js",
+  "author": "Ernesto Jimenez V",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}
