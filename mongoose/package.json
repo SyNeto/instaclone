@@ -1,0 +1,17 @@
+{
+  "name": "mongoose",
+  "version": "0.0.0",
+  "description": "Mongoose Test",
+  "main": "index.js",
+  "author": "Ernesto Jimenez V",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.7.0"
+  },
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
