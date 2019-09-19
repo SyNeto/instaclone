@@ -13,3 +13,17 @@ services:
       - mongo-instaclone-data:/data/db
       # *nix
       # - ./mongo_data:/data/db
+  instaclone:
+    build: .
+    container_name: instaclone
+    ports:
+      - 3000:3000
+    volumes:
+      # windows
+      - .\code:/code
+      # *nix
+      # - ./code:/code
+    working_dir: /code
+    command: ['yarn', 'start']
+    depends_on:
+      - nosql
