@@ -27,3 +27,6 @@ services:
     command: ['yarn', 'start']
     depends_on:
       - nosql
+networks:
+  default:
+    name: instaclone-net
