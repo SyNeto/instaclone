@@ -30,3 +30,7 @@ services:
 networks:
   default:
     name: instaclone-net
+# WARNING: Windows Users Only
+volumes:
+  mongo-instaclone-data:
+    driver: local
