@@ -9,4 +9,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./mongodata:/data/db
+      # Windows
+      - mongo-instaclone-data:/data/db
+      # *nix
+      # - ./mongo_data:/data/db
