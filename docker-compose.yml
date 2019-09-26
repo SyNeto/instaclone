@@ -10,9 +10,9 @@ services:
       - 27017:27017
     volumes:
       # Windows
-      - mongo-instaclone-data:/data/db
+      # - mongo-instaclone-data:/data/db
       # *nix
-      # - ./mongo_data:/data/db
+      - ./mongo_data:/data/db
   instaclone:
     build: .
     container_name: instaclone
@@ -20,17 +20,17 @@ services:
       - 3000:3000
     volumes:
       # windows
-      - .\code:/code
+      # - .\code:/code
       # *nix
-      # - ./code:/code
+      - ./code:/code
     working_dir: /code
-    command: ['yarn', 'start']
+    command: sh -c "yarn && yarn start"
     depends_on:
       - nosql
 networks:
   default:
     name: instaclone-net
 # WARNING: Windows Users Only
-volumes:
-  mongo-instaclone-data:
-    driver: local
+# volumes:
+#   mongo-instaclone-data:
+#     driver: local
