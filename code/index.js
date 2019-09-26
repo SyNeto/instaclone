@@ -2,7 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
+const passportJWT = require('./middlewares/passportJWT')();
+
 const postRoutes = require('./routes/post');
+const authRoutes = require('./routes/auth');
 
 mongoose.connect('mongodb://nosql:27017/instaclone', {
     useNewUrlParser: true,
@@ -18,8 +21,9 @@ db.once('open', () => console.log('MongoDB connection stablished'));
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(passportJWT.initialize());
 
 app.use('/api/posts', postRoutes);
+app.use('/api/auth', authRoutes);
 
 app.listen(3000, () => console.log('Listen on port 3000'));
