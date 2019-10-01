@@ -3,6 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 const passportJWT = require('./middlewares/passportJWT')();
+const errorHandler = require('./middlewares/errorHandler');
 
 const postRoutes = require('./routes/post');
 const authRoutes = require('./routes/auth');
@@ -25,5 +26,7 @@ app.use(passportJWT.initialize());
 
 app.use('/api/posts', postRoutes);
 app.use('/api/auth', authRoutes);
+
+app.use(errorHandler);
 
 app.listen(3000, () => console.log('Listen on port 3000'));
